@@ -72,20 +72,15 @@ public class Main1 {
             }
         }
 
-
-
-
         System.out.println(res);
         System.out.println(maxCandy);
     }
 static void  dfs(int[][]map, List<Integer> path, int x, int y, boolean[][] vis){
 
-
         if(map[x][y]==-2){
             res.add(new ArrayList<>(path));
         return;
         }
-
     for(int i = 0; i < 4; i++) {
 
         int nx = x +dir[i][0];
@@ -103,8 +98,5 @@ static void  dfs(int[][]map, List<Integer> path, int x, int y, boolean[][] vis){
             }
         vis[nx][ny]=false;
     }
-
     }
-
-
 }
