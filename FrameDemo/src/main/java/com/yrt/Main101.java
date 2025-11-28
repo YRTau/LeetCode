@@ -1,7 +1,9 @@
 package com.yrt;
 
 import java.util.Scanner;
-
+/*
+dfs 处理孤岛问题模版
+ */
 public class Main101 {
     static final int[][] dir= {{0,1},{0,-1},{1,0},{-1,0}};
     static int count = 0;
@@ -35,16 +37,15 @@ public class Main101 {
     }
 
     private static void dfs(int[][] map, int x, int y, boolean[][] vis) {
+        //坐标标记
         vis[x][y] = true;
         count++;
 
-        //坐标标记
         for (int i = 0; i < 4; i++) {
             int nextx = x + dir[i][0];
             int nexty = y + dir[i][1];
             if(nextx >= 0 && nextx < map.length && nexty >= 0 && nexty < map[0].length && map[nextx][nexty] == 1 && !vis[nextx][nexty]){
-                //vis[nextx][nexty] = true;
-                // DFS不在这里 count++;
+
                 dfs(map,nextx,nexty,vis);
 
             }
